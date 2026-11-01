@@ -62,6 +62,8 @@ Purpose:
 
 Create a self-signed X.509 certificate.
 
+openssl req -x509 -new -nodes -key ca1.key -sha256 -days 900 -out ca1.pem
+
 ```bash
 openssl req -x509 -new -nodes \
 -key ca1.key \
@@ -118,6 +120,8 @@ Purpose:
 
 Generate a CSR using the server private key.
 
+openssl req -new -key www.mylocalsite.local -out www.mylocalsite.csr
+
 ```bash
 openssl req -new \
 -key www.mylocalsite.local \
@@ -149,6 +153,9 @@ Purpose:
 
 # Step 5 - Create the Extension File
 
+<img width="1896" height="332" alt="image" src="https://github.com/user-attachments/assets/21823ad2-c7bd-4eab-bab3-e229288b46ab" />
+
+
 Create a file named:
 
 ```bash
@@ -178,6 +185,8 @@ Purpose:
 # Step 6 - Sign the CSR Using the CA
 
 Create the final server certificate.
+
+<img width="1907" height="420" alt="image" src="https://github.com/user-attachments/assets/27f0c2d3-4e75-4ab9-8fff-7e4159c680bc" />
 
 ```bash
 openssl x509 -req \
